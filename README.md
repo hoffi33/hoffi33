@@ -8,6 +8,8 @@
 @;   hoffmannjakub@icloud.com
 linkedin;  https://pl.linkedin.com/in/jakub-hoffmann-a32484209
 
+❗️This profile has repositories forked from profile s24551 - this is my university github - light dump.
+
 <!---
 soon.
 --->
