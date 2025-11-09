@@ -1,113 +1,165 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+        <div className="container px-4 py-24 mx-auto text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              Zamień podcast w newsletter
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                w 2 minuty
+              </span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              AI Copilot dla Twojego newslettera. Import z YouTube, podcastu lub bloga.
+              Claude AI pisze profesjonalny newsletter za Ciebie.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/register">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Start Free - No Credit Card
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                  Zobacz cennik
+                </Button>
+              </Link>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              2 newslettery za darmo. Bez karty kredytowej.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* How It Works */}
+      <section className="py-24 bg-background">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Jak to działa?</h2>
+            <p className="text-xl text-muted-foreground">3 proste kroki do gotowego newslettera</p>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card>
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <CardTitle>Import Content</CardTitle>
+                <CardDescription>
+                  Wklej link do YouTube, upload podcast (MP3), lub skopiuj artykuł z bloga
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-2xl font-bold text-primary">2</span>
+                </div>
+                <CardTitle>AI Analiza</CardTitle>
+                <CardDescription>
+                  Claude AI analizuje content i wyciąga kluczowe insights, cytaty i wnioski
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-2xl font-bold text-primary">3</span>
+                </div>
+                <CardTitle>Export & Send</CardTitle>
+                <CardDescription>
+                  Edytuj, wybierz subject line i eksportuj. Wyślij przez swój ESP (Mailchimp, Beehiiv)
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-24 bg-muted/30">
+        <div className="container px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Funkcje</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { icon: '🎬', title: 'YouTube Import', desc: 'Automatyczna transkrypcja filmów' },
+              { icon: '🎙️', title: 'Podcast Support', desc: 'Upload MP3 lub link do podcastu' },
+              { icon: '📄', title: 'Blog Scraping', desc: 'Wyciągnij content z dowolnego artykułu' },
+              { icon: '🤖', title: 'AI Analysis', desc: 'Claude Sonnet 4.5 analizuje content' },
+              { icon: '✍️', title: 'Smart Editor', desc: 'Tiptap editor z rich formatting' },
+              { icon: '📧', title: '10 Subject Lines', desc: 'AI generuje najlepsze subject lines' },
+            ].map((feature, i) => (
+              <Card key={i}>
+                <CardContent className="pt-6">
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-primary text-primary-foreground">
+        <div className="container px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Gotowy aby zacząć?</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Dołącz do twórców którzy zaoszczędzili setki godzin na pisaniu newsletterów
           </p>
-        </a>
+          <Link href="/register">
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Start Free Today
+            </Button>
+          </Link>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {/* Footer */}
+      <footer className="py-12 bg-background border-t">
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+              <p className="font-bold text-lg">NewsletterAI</p>
+              <p className="text-sm text-muted-foreground">
+                AI-powered newsletter generator
+              </p>
+            </div>
+            <div className="flex gap-6">
+              <Link href="/pricing" className="text-sm hover:underline">
+                Pricing
+              </Link>
+              <Link href="/login" className="text-sm hover:underline">
+                Login
+              </Link>
+              <Link href="/register" className="text-sm hover:underline">
+                Sign Up
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 text-center text-sm text-muted-foreground">
+            © 2024 NewsletterAI. Built with Next.js, Claude AI & Supabase.
+          </div>
+        </div>
+      </footer>
     </main>
-  );
+  )
 }
